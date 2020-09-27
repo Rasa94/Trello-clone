@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+#addNewCatBtn {
+    align-items: stretch;
+    background-color: orange;
+    border: none;
+    width: 100px;
+}
+
+.newCatPopNone {
+    display: none;
+}
+
+.newCatPop {
+    display: block;
+    position: relative;
+    background-color: black;
+    color: white;
+    height: 200px;
+    width: 400px;
+    margin: 20% auto;
+    padding: 20px;
+    z-index: 10000000 !important;
+
+}
+
+.newCatPop input {
+    margin-bottom: 30px;
+}
+
+.newCatPop button {
+    background-color: orange;
+    border: none;
+    width: 100px;
+    height: 35px;
+}
+
+.newTaskPopNone {
+    display: none;
+}
+
+.newTaskPop {
+    display: block;
+    background-color: black;
+    color: white;
+    height: 200px;
+    width: 400px;
+    margin: 20% auto;
+    padding: 20px;
+    position: absolute;
+    z-index: 10000000 !important;
+
+}
+
+.newTaskPop input {
+    margin-bottom: 30px;
+}
+
+.newTaskPop button {
+    background-color: orange;
+    border: none;
+    width: 100px;
+    height: 35px;
+}
+
+.board {
+    display: flex;
+}
+
+.cat {
+    position: relative;
+    z-index: 1 !important;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 150px;
+}
+
+.list {
+    height: 450px;
+    background-color: grey;
+}
