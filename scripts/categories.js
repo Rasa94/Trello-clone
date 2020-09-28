@@ -6,21 +6,15 @@ export class Category {
 
     render() {
         let board = document.querySelector('.board');
-        let div = document.createElement("DIV");
-        div.className = 'cat';
-        let namePar = document.createTextNode(`Name: ${this.name}`);
-        div.appendChild(namePar);
-        let descPar = document.createTextNode(`Description: ${this.description}`);
-        div.appendChild(descPar);
-        let btn = document.createElement('BUTTON');
-        btn.innerText = 'Add task';
-        btn.className = 'taskBtn'
-        div.appendChild(btn);
-        let list = document.createElement('DIV');
-        list.className = "list";
-        list.innerText = 'Tasks:'
-        div.appendChild(list);
-        board.appendChild(div);
+        let div =   `<div class="cat">
+                        <p>Name: ${this.name}</p>
+                        <p>Description: ${this.description}</p>
+                        <div class="list">
+                            <p>Tasks:</p>
+                        </div>
+                        <button class="taskBtn" >Add task</button>
+                    </div>`;
+        board.innerHTML += div;
     }
 }
 

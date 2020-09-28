@@ -29,7 +29,7 @@ let ev;
 
 b.addEventListener('click', (e) => {
     e.preventDefault();
-    ev = e.target.nextElementSibling 
+    ev = e.target.previousElementSibling 
     if(e.target.className == 'taskBtn') {
         newTaskPop.classList.toggle('newTaskPop');
     }

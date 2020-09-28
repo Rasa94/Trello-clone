@@ -4,18 +4,86 @@
     padding: 0;
 }
 
-nav {
-    display: flex;
-    background-color: black;
-    color: white;
-    width: 100%;
+body {
+    background-color: #FEB062;
+    overflow-x: scroll;
 }
 
+        /* Navigation */
+
+.board {
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+.cat {
+    position: relative;
+    display: inline-block;
+    z-index: 1 !important;
+    margin: 20px;
+    width: 250px;
+    height: 100%;
+    word-break: break-all;
+    background-color: #2B2B2B;
+    color: white;
+    opacity: 0.8;
+}
+
+.cat p {
+    margin: 5px;
+}
+
+.taskBtn {
+    height: 30px;
+    margin: 5px;
+    margin: 5px;
+}
+
+.list {
+    margin-top: 20px;
+    min-height: 100px;
+    max-height: 100%;
+    width: 250px;
+    background-color: #575151;
+}
+
+.list p {
+    margin: 5px;
+}
+
+.listItem {
+    width: 240px;
+    margin: 5px;
+    background-color: white;
+    color: black;
+}
+
+nav {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    background-color: #131313;
+    color: white;
+    opacity: 0.8; 
+}
+
+nav h1 {
+    height: 30px;
+    margin: 5px;
+}
+
+        /* New category */
+
 #addNewCatBtn {
-    align-items: stretch;
-    background-color: orange;
-    border: none;
+    position: absolute;
+    right: 5px;
     width: 100px;
+    height: 30px;
+    margin: 5px;
+    background-color: #131313;
+    border: #FEB062 solid 2px;
+    color: white;
 }
 
 .newCatPopNone {
@@ -25,14 +93,13 @@ nav {
 .newCatPop {
     display: block;
     position: relative;
-    background-color: black;
-    color: white;
     height: 200px;
     width: 400px;
-    margin: 20% auto;
+    /* margin: 20% auto; */
     padding: 20px;
-    z-index: 10000000 !important;
-
+    z-index: 1000 !important;
+    background-color: #131313;
+    color: white;
 }
 
 .newCatPop input {
@@ -40,11 +107,13 @@ nav {
 }
 
 .newCatPop button {
-    background-color: orange;
-    border: none;
     width: 100px;
     height: 35px;
+    background-color: #FEB062;
+    border: none;
 }
+
+        /* New task */
 
 .newTaskPopNone {
     display: none;
@@ -52,15 +121,14 @@ nav {
 
 .newTaskPop {
     display: block;
-    background-color: black;
-    color: white;
+    position: relative;
+    z-index: 10000000 !important;
     height: 200px;
     width: 400px;
     margin: 20% auto;
     padding: 20px;
-    position: absolute;
-    z-index: 10000000 !important;
-
+    background-color: #131313;
+    color: white;
 }
 
 .newTaskPop input {
@@ -68,27 +136,10 @@ nav {
 }
 
 .newTaskPop button {
-    background-color: orange;
-    border: none;
     width: 100px;
     height: 35px;
+    background-color: #FEB062;
+    border: none;
 }
 
-.board {
-    display: flex;
-}
 
-.cat {
-    position: relative;
-    z-index: 1 !important;
-    margin: 20px;
-    background-color: black;
-    color: white;
-    width: 150px;
-    height: 150px;
-}
-
-.list {
-    height: 450px;
-    background-color: grey;
-}
