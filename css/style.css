@@ -4,19 +4,120 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+  }
+
+body {
+    height: 100%;
+    background-color: #5CDB95;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+        /* Navigation */
+
 nav {
     display: flex;
-    background-color: black;
-    color: white;
+    height: 40px;
     width: 100%;
+    background-color: #5CDB95;
+    color: #05386B;
+}
+
+nav h1 {
+    position: absolute;
+    left: 20px;
+    height: 30px;
+    margin: 5px;
 }
 
 #addNewCatBtn {
-    align-items: stretch;
-    background-color: orange;
-    border: none;
-    width: 100px;
+    position: absolute;
+    right: 5px;
+    height: 30px;
+    margin: 5px;
 }
+
+button {
+    width: 100px;
+    height: 35px;
+    background-color: #05386B;
+    color: white;
+    border: none;
+}
+
+        /* Categories */
+
+.board {
+    display: flex;
+    height: 100% !important;
+    overflow-x: scroll;
+}
+
+.cat {
+    display: inline-block;
+    margin: 20px;
+    width: 260px;
+    max-height: 80%;
+    word-break: break-all;
+    background-color: #379683;
+    color: white;
+}
+
+.cat p {
+    margin: 5px;
+}
+
+.catBtns {
+    height: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.removeCatBtn {
+    height: 30px;
+    margin: 10px 10px;
+}
+
+.taskBtn {
+    height: 30px;
+    margin: 10px 15px;
+}
+
+        /* Lists  */
+
+.list {
+    margin-top: 20px;
+    height: 75%;
+    width: 260px;
+    background-color: #8EE4AF;
+    overflow-y: auto;
+}
+
+.list p {
+    margin: 0px;
+    padding: 5px;
+    background-color: #379683;
+}
+
+.listItem {
+    width: 230px;
+    min-height: 24px;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+
+.removeItemBtn {
+    float: right;
+    height: 18px;
+    width: 18px;
+    pad: 2px;
+}
+
+        /* New category */
 
 .newCatPopNone {
     display: none;
@@ -24,27 +125,26 @@ nav {
 
 .newCatPop {
     display: block;
-    position: relative;
-    background-color: black;
-    color: white;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;    
+    z-index: 999999;
     height: 200px;
     width: 400px;
-    margin: 20% auto;
+    /* margin: 20% auto; */
     padding: 20px;
-    z-index: 10000000 !important;
-
+    background-color: #379683;
+    color: white;
 }
 
 .newCatPop input {
     margin-bottom: 30px;
 }
 
-.newCatPop button {
-    background-color: orange;
-    border: none;
-    width: 100px;
-    height: 35px;
-}
+        /* New task */
 
 .newTaskPopNone {
     display: none;
@@ -52,43 +152,24 @@ nav {
 
 .newTaskPop {
     display: block;
-    background-color: black;
-    color: white;
-    height: 200px;
-    width: 400px;
-    margin: 20% auto;
-    padding: 20px;
     position: absolute;
-    z-index: 10000000 !important;
-
+    top: 180px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 999999 !important;
+    height: 100px;
+    width: 400px;
+    padding: 20px;
+    background-color: #379683;
+    color: white;
 }
 
 .newTaskPop input {
     margin-bottom: 30px;
 }
 
-.newTaskPop button {
-    background-color: orange;
-    border: none;
-    width: 100px;
-    height: 35px;
-}
 
-.board {
-    display: flex;
-}
 
-.cat {
-    position: relative;
-    z-index: 1 !important;
-    margin: 20px;
-    background-color: black;
-    color: white;
-    width: 150px;
-    height: 150px;
-}
 
-.list {
-    height: 450px;
-    background-color: grey;
-}
