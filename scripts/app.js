@@ -14,7 +14,7 @@ let confirmTaskBtn = document.getElementById('confirmTaskBtn');
 let name = document.getElementById('nameInput');
 let description = document.getElementById('descInput');
 
-// Pop up windows and item adding
+        // Pop up windows and item adding
 
 addCatButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -34,8 +34,8 @@ let listLocation;
 
 board.addEventListener('click', (e) => {
     e.preventDefault();
-    listLocation = e.target.parentNode.previousElementSibling;
-    if(e.target.className == 'taskBtn') {
+    listLocation = e.target.parentNode.previousElementSibling; 
+    if (e.target.className == 'taskBtn') {
         newTaskPop.classList.toggle('newTaskPop');
     }
 })
@@ -48,18 +48,18 @@ confirmTaskBtn.addEventListener('click', (e) => {
     taskInput.value = '';
 })
 
-// Category and item removal 
+        // Category and item removal 
 
 document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.classList.contains('removeItemBtn')) {
-        e.target.parentNode.remove();    
+        e.target.parentNode.parentNode.remove();    
     } else if(e.target.classList.contains('removeCatBtn')) {
-        e.target.parentNode.remove();   
+        e.target.parentNode.parentNode.remove();   
     }
 }, true);
 
 
-// Drag and drop events for list items
+        // Drag and drop events
 
 let listElement;
 let catElement;

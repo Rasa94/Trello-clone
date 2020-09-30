@@ -6,59 +6,29 @@
 
 html {
     height: 100%;
-  }
+}
 
 body {
     height: 100%;
     background-color: #5CDB95;
+    overflow-x: scroll;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
         /* Navigation */
 
-nav {
-    display: flex;
-    height: 40px;
-    width: 100%;
-    background-color: #5CDB95;
-    color: #05386B;
-}
-
-nav h1 {
-    position: absolute;
-    left: 20px;
-    height: 30px;
-    margin: 5px;
-}
-
-#addNewCatBtn {
-    position: absolute;
-    right: 5px;
-    height: 30px;
-    margin: 5px;
-}
-
-button {
-    width: 100px;
-    height: 35px;
-    background-color: #05386B;
-    color: white;
-    border: none;
-}
-
-        /* Categories */
-
 .board {
     display: flex;
-    height: 100% !important;
-    overflow-x: scroll;
+    position: relative;
+    height: 100%;
 }
 
 .cat {
+    position: relative;
     display: inline-block;
     margin: 20px;
     width: 260px;
-    max-height: 80%;
+    height: 80%;
     word-break: break-all;
     background-color: #379683;
     color: white;
@@ -66,6 +36,61 @@ button {
 
 .cat p {
     margin: 5px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    margin: 5px;
+    background-color: #05386B;
+    color: white;
+    border: none;
+}
+
+.list {
+    margin-top: 20px;
+    min-height: 100px;
+    max-height: 100%;
+    width: 250px;
+    background-color: #379683;
+}
+
+.list p {
+    margin: 5px;
+    background-color: #379683;
+}
+
+.listItem {
+    width: 240px;
+    margin: 5px;
+    background-color: white;
+    color: black;
+}
+
+nav {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    color: #05386B;
+}
+
+nav h1 {
+    height: 30px;
+    margin: 5px;
+}
+
+        /* New category */
+
+#addNewCatBtn {
+    position: absolute;
+    right: 5px;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    background-color: #05386B;
+    border: none;
+    color: white;
 }
 
 .catBtns {
@@ -84,7 +109,7 @@ button {
     margin: 10px 15px;
 }
 
-        /* Lists  */
+        /* Lists */
 
 .list {
     margin-top: 20px;
@@ -114,7 +139,8 @@ button {
     float: right;
     height: 18px;
     width: 18px;
-    pad: 2px;
+    margin: 2px;
+    padding: 1px;
 }
 
         /* New category */
@@ -126,21 +152,27 @@ button {
 .newCatPop {
     display: block;
     position: absolute;
-    top: 180px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;    
-    z-index: 999999;
     height: 200px;
     width: 400px;
     padding: 20px;
+    top: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
     background-color: #379683;
     color: white;
 }
 
 .newCatPop input {
     margin-bottom: 30px;
+}
+
+.newCatPop button {
+    width: 100px;
+    height: 35px;
+    border: none;
 }
 
         /* New task */
@@ -152,15 +184,15 @@ button {
 .newTaskPop {
     display: block;
     position: absolute;
-    top: 180px;
+    height: 110px;
+    width: 400px;
+    padding: 20px;
+    top: 200px;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    z-index: 999999 !important;
-    height: 100px;
-    width: 400px;
-    padding: 20px;
+    z-index: 1000;
     background-color: #379683;
     color: white;
 }
@@ -169,6 +201,10 @@ button {
     margin-bottom: 30px;
 }
 
-
+.newTaskPop button {
+    width: 100px;
+    height: 35px;
+    border: none;
+}
 
 
