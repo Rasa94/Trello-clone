@@ -10,7 +10,7 @@ html {
 
 body {
     height: 100%;
-    background-image: url("/images/background.jpg");    
+    background-image: url("./images/background.jpg");    
     overflow-x: scroll;
     overflow-y: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
