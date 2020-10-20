@@ -2,4 +2,4 @@
 
 (JavaScript)
 
-The purpose of this [project](https://weatherapp-8cc98.web.app/) was to practice events
+The purpose of this [project](https://trelloclone-ab820.web.app/) was to practice events
