@@ -52,7 +52,7 @@ confirmTaskBtn.addEventListener('click', (e) => {
 
 document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.classList.contains('removeItemBtn')) {
-        e.target.parentNode.parentNode.remove();    
+        e.target.parentNode.remove();    
     } else if(e.target.classList.contains('removeCatBtn')) {
         e.target.parentNode.parentNode.remove();   
     }
@@ -65,6 +65,7 @@ let listElement;
 let catElement;
 
 document.querySelector('body').addEventListener('drag', (e) => {
+    e.preventDefault();
     if ( e.target.classList.contains('listItem') ) {
         e.preventDefault();
         listElement = e.target;
@@ -72,27 +73,34 @@ document.querySelector('body').addEventListener('drag', (e) => {
         e.preventDefault();
         catElement = e.target;
     }
+    console.log(e.target);
+
 }, true);
 
 document.querySelector('body').addEventListener('dragover', (e) => {
     e.preventDefault();
+
     let overCoordinatesY = e.clientY;
     let overCoordinatesX = e.clientX;
+    let afterElement;
 
     if ( e.target.classList.contains('list') ) {
-        const afterElement = getDragAfterElementY( overCoordinatesY);
-        if (afterElement == null) {
+         afterElement = getDragAfterElementY(overCoordinatesY);
+         console.log(afterElement);
+        if (afterElement == null) {                  
             e.target.append(listElement);
         } else {
             e.target.insertBefore(listElement, afterElement);
         }
     } else if ( e.target.classList.contains('board') ) {
-        const afterElement = getDragAfterElementX(overCoordinatesX);
-        if (afterElement == null) {
+         afterElement = getDragAfterElementX(overCoordinatesX);
+         console.log(afterElement);
+        if (afterElement == null && afterElement != undefined) {
             e.target.append(catElement);
         } else {
             e.target.insertBefore(catElement, afterElement);
         }
     }
 }, true);
+
 
