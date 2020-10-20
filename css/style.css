@@ -10,12 +10,11 @@ html {
 
 body {
     height: 100%;
-    background-color: #5CDB95;
+    background-image: url("/images/background.jpg");    
     overflow-x: scroll;
+    overflow-y: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-        /* Navigation */
 
 .board {
     display: flex;
@@ -23,50 +22,7 @@ body {
     height: 100%;
 }
 
-.cat {
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    width: 260px;
-    height: 80%;
-    word-break: break-all;
-    background-color: #379683;
-    color: white;
-}
-
-.cat p {
-    margin: 5px;
-}
-
-button {
-    width: 100px;
-    height: 30px;
-    margin: 5px;
-    margin: 5px;
-    background-color: #05386B;
-    color: white;
-    border: none;
-}
-
-.list {
-    margin-top: 20px;
-    min-height: 100px;
-    max-height: 100%;
-    width: 250px;
-    background-color: #379683;
-}
-
-.list p {
-    margin: 5px;
-    background-color: #379683;
-}
-
-.listItem {
-    width: 240px;
-    margin: 5px;
-    background-color: white;
-    color: black;
-}
+        /* Navigation */
 
 nav {
     display: flex;
@@ -75,12 +31,68 @@ nav {
     color: #05386B;
 }
 
-nav h1 {
+h1 {
+    color: white;
+    font-size: 2rem;
     height: 30px;
     margin: 5px;
 }
 
-        /* New category */
+        /* Categories */
+
+.cat {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    width: 260px;
+    height: 80%;
+    word-break: break-all;
+    background-color: #222222;
+    color: white;
+}
+
+.cat p {
+    margin: 5px;
+}
+
+        /* Task box and tasks */
+
+.list {
+    margin-top: 20px;
+    height: 75%;
+    width: 260px;
+    background-color:#333333;
+    overflow-y: auto;
+}
+
+.list p {
+    margin: 0px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.listItem {
+    width: 230px;
+    min-height: 24px;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+
+        /* Buttons */
+        
+button {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    margin: 5px;
+    font-weight: bold;
+    background-color:white;
+    color: black;
+    border: none;
+}
 
 #addNewCatBtn {
     position: absolute;
@@ -88,8 +100,13 @@ nav h1 {
     width: 100px;
     height: 30px;
     margin: 5px;
-    background-color: #05386B;
     border: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.newCatPop button {
+    background-color: #222222;
     color: white;
 }
 
@@ -104,43 +121,17 @@ nav h1 {
     margin: 10px 10px;
 }
 
-.taskBtn {
-    height: 30px;
-    margin: 10px 15px;
-}
-
-        /* Lists */
-
-.list {
-    margin-top: 20px;
-    height: 75%;
-    width: 260px;
-    background-color: #8EE4AF;
-    overflow-y: auto;
-}
-
-.list p {
-    margin: 0px;
-    padding: 5px;
-    background-color: #379683;
-}
-
-.listItem {
-    width: 230px;
-    min-height: 24px;
-    margin: 10px;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-}
-
 .removeItemBtn {
     float: right;
     height: 18px;
     width: 18px;
     margin: 2px;
     padding: 1px;
+}
+
+.taskBtn {
+    height: 30px;
+    margin: 10px 15px;
 }
 
         /* New category */
@@ -161,8 +152,10 @@ nav h1 {
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
-    background-color: #379683;
-    color: white;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }
 
 .newCatPop input {
@@ -174,9 +167,9 @@ nav h1 {
     height: 35px;
     border: none;
 }
-
-        /* New task */
-
+    
+            /* New task */
+    
 .newTaskPopNone {
     display: none;
 }
@@ -193,8 +186,10 @@ nav h1 {
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
-    background-color: #379683;
-    color: white;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
 }
 
 .newTaskPop input {
@@ -206,5 +201,11 @@ nav h1 {
     height: 35px;
     border: none;
 }
+    
+
+ 
+
+
+
 
 
