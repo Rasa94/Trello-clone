@@ -1,7 +1,6 @@
 import { Category } from "./categories.js";
 import { Task } from "./tasks.js"
-import { getDragAfterElementX } from "./dragFunctions.js"
-import { getDragAfterElementY } from "./dragFunctions.js"
+import { getDragAfterElement } from "./dragFunctions.js"
 
 
 let board = document.querySelector('.board');
@@ -77,29 +76,28 @@ document.querySelector('body').addEventListener('drag', (e) => {
 
 }, true);
 
+// Insertion of elements based on the type (horizontal/vertical)
+
+let insertion = (type, elementTarget, afterElement) => {
+    if (afterElement == null && afterElement != undefined) {                  
+        elementTarget.append(type);
+    } else {
+        elementTarget.insertBefore(type, afterElement);
+    }
+}
+
 document.querySelector('body').addEventListener('dragover', (e) => {
     e.preventDefault();
-
     let overCoordinatesY = e.clientY;
     let overCoordinatesX = e.clientX;
-    let afterElement;
+    let afterEl;
 
     if ( e.target.classList.contains('list') ) {
-         afterElement = getDragAfterElementY(overCoordinatesY);
-         console.log(afterElement);
-        if (afterElement == null) {                  
-            e.target.append(listElement);
-        } else {
-            e.target.insertBefore(listElement, afterElement);
-        }
+        afterEl = getDragAfterElement(overCoordinatesY, 'y');
+        insertion(listElement, e.target, afterEl);
     } else if ( e.target.classList.contains('board') ) {
-         afterElement = getDragAfterElementX(overCoordinatesX);
-         console.log(afterElement);
-        if (afterElement == null && afterElement != undefined) {
-            e.target.append(catElement);
-        } else {
-            e.target.insertBefore(catElement, afterElement);
-        }
+        afterEl = getDragAfterElement(overCoordinatesX, 'x');
+        insertion(catElement, e.target, afterEl);
     }
 }, true);
 
