@@ -10,4 +10,3 @@ The purpose of this [project](https://trelloclone-ab820.web.app/) was to practic
 - Adding new categories and tasks
 - Manipulating categories and tasks (drag and drop)
 
-## Firebase hosting is curently having problems for some reason, if you are experiencing bugs run the code in live server.
