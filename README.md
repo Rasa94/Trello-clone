@@ -1,4 +1,4 @@
-# Trello-clone
+# Trello clone
 
 (JavaScript)
 
