@@ -8,5 +8,5 @@ The purpose of this [project](https://trelloclone-ab820.web.app/) was to practic
 
 ## Functionalities:
 - Adding new categories and tasks
-- Manipulating categories and tasks (drag and drop)
+- Drag and drop categories and tasks 
 
