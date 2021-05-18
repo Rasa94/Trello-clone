@@ -1,82 +1,8 @@
-import { Category } from "./categories.js";
-import { Task } from "./tasks.js"
-import { getDragAfterElement } from "./dragFunctions.js"
+import { getDragAfterElement } from "./dragFunctions.js";
+import "./modals.js";
 
 
-let board = document.querySelector('.board');
-let addCatPop = document.querySelector('.newCatPopNone');
-let addCatButton = document.getElementById('addNewCatBtn');
-let newTaskPop = document.querySelector('.newTaskPopNone');
-let taskInput = document.querySelector('.taskInput');
-let confirmCatBtn = document.getElementById('confirmCatBtn');
-let confirmTaskBtn = document.getElementById('confirmTaskBtn');
-let name = document.getElementById('nameInput');
-let description = document.getElementById('descInput');
-
-        // Pop up windows and item adding
-
-addCatButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    addCatPop.classList.toggle('newCatPop');
-})
-
-confirmCatBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    let cat = new Category(name.value, description.value);
-    cat.render();
-    addCatPop.classList.toggle('newCatPop');
-    name.value = '';
-    description.value = '';
-})
-
-let listLocation;
-
-board.addEventListener('click', (e) => {
-    e.preventDefault();
-    listLocation = e.target.parentNode.previousElementSibling; 
-    if (e.target.className == 'taskBtn') {
-        newTaskPop.classList.toggle('newTaskPop');
-    }
-})
-
-confirmTaskBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    let task = new Task(taskInput.value);
-    task.render(listLocation);
-    newTaskPop.classList.toggle('newTaskPop');
-    taskInput.value = '';
-})
-
-        // Category and item removal 
-
-document.querySelector('body').addEventListener('click', (e) => {
-    if (e.target.classList.contains('removeItemBtn')) {
-        e.target.parentNode.remove();    
-    } else if(e.target.classList.contains('removeCatBtn')) {
-        e.target.parentNode.parentNode.remove();   
-    }
-}, true);
-
-
-        // Drag and drop events
-
-let listElement;
-let catElement;
-
-document.querySelector('body').addEventListener('drag', (e) => {
-    e.preventDefault();
-    if ( e.target.classList.contains('listItem') ) {
-        e.preventDefault();
-        listElement = e.target;
-    } else if ( e.target.classList.contains('cat') ) {
-        e.preventDefault();
-        catElement = e.target;
-    }
-    console.log(e.target);
-
-}, true);
-
-// Insertion of elements based on the type (horizontal/vertical)
+        // Insertion function 
 
 let insertion = (type, elementTarget, afterElement) => {
     if (afterElement == null && afterElement != undefined) {                  
@@ -84,21 +10,44 @@ let insertion = (type, elementTarget, afterElement) => {
     } else {
         elementTarget.insertBefore(type, afterElement);
     }
-}
+};
 
-document.querySelector('body').addEventListener('dragover', (e) => {
-    e.preventDefault();
+        // Drag and drop events
+
+let listElement;
+let containerElement;
+
+document.querySelector('body').addEventListener('dragstart', e => {
+    if ( e.target.classList.contains('listItem')) {
+        listElement = e.target;
+
+        listElement.classList.add('dragging');
+    } else if ( e.target.classList.contains('cat')) {
+        containerElement = e.target;
+
+        containerElement.classList.add('dragging');
+    }
+});
+
+document.querySelector('body').addEventListener('dragover', e => {
     let overCoordinatesY = e.clientY;
     let overCoordinatesX = e.clientX;
     let afterEl;
 
-    if ( e.target.classList.contains('list') ) {
+    if ( e.target.classList.contains('list') && listElement.classList.contains('dragging')) {
         afterEl = getDragAfterElement(overCoordinatesY, 'y');
         insertion(listElement, e.target, afterEl);
-    } else if ( e.target.classList.contains('board') ) {
+    } else if ( e.target.classList.contains('board') && containerElement.classList.contains('dragging')) {
         afterEl = getDragAfterElement(overCoordinatesX, 'x');
-        insertion(catElement, e.target, afterEl);
+        insertion(containerElement, e.target, afterEl);
     }
 }, true);
 
+document.querySelector('body').addEventListener('dragend', e => {
+    if ( e.target.classList.contains('listItem')) {
+        listElement.classList.remove('dragging');
+    } else if ( e.target.classList.contains('cat')) {
+        containerElement.classList.remove('dragging');
 
+    }
+});
