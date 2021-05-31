@@ -1,6 +1,6 @@
-let backgounds = document.getElementsByTagName('BODY')[0];
-let dropdownBtn = document.querySelector('.backgroundBtn');
+let dropdownBtn = document.querySelector('.dropdownBtn');
 let dropdownMenu = document.querySelector('.dropdownMenu');
+let backgounds = document.getElementsByTagName('BODY')[0];
 let backgroundSubmit = document.querySelector('.backgroundSubmitBtn');
 
 
@@ -55,7 +55,11 @@ dropdownMenu.addEventListener('submit', () => {
 });    
 
 dropdownBtn.addEventListener('click', () => {
-    dropdownMenu.style.display === "none" ? dropdownMenu.style.display = "block" : dropdownMenu.style.display = "none";
+    if(dropdownMenu.style.display === "none" || dropdownMenu.style.display === "") {
+        dropdownMenu.style.display = "block"
+    } else {
+        dropdownMenu.style.display = "none"
+    }
 });
 
 backgroundSubmit.addEventListener('click', () => {
