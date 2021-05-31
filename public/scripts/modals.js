@@ -3,13 +3,12 @@ import { Task } from "./tasks.js";
  
 let board = document.querySelector('.board');
 let addCatPop = document.querySelector('.newCatPopNone');
-let addCatButton = document.getElementById('addNewCatBtn');
+let addCatButton = document.querySelector('.addNewCatBtn');
 let newTaskPop = document.querySelector('.newTaskPopNone');
 let taskInput = document.querySelector('.taskInput');
-let confirmCatBtn = document.getElementById('confirmCatBtn');
-let confirmTaskBtn = document.getElementById('confirmTaskBtn');
+let confirmCatBtn = document.querySelector('.confirmCatBtn');
+let confirmTaskBtn = document.querySelector('.confirmTaskBtn');
 let name = document.getElementById('nameInput');
-let description = document.getElementById('descInput');
 
 
         // Pop up windows and item adding
@@ -17,16 +16,14 @@ let description = document.getElementById('descInput');
 addCatButton.addEventListener('click', (e) => {
     e.preventDefault();
     addCatPop.classList.toggle('newCatPop');
-    console.log(e.target);
 });
 
 confirmCatBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    let cat = new Category(name.value, description.value);
+    let cat = new Category(name.value);
     cat.render();
     addCatPop.classList.toggle('newCatPop');
     name.value = '';
-    description.value = '';
 });
 
 let listLocation;

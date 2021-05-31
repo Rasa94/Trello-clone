@@ -10,7 +10,6 @@ html {
 
 body {
     height: 100%;
-    background-image: url("/images/background.jpg");    
     overflow-x: scroll;
     overflow-y: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,9 +25,11 @@ body {
 
 nav {
     display: flex;
-    height: 40px;
+    justify-content: space-between;
+    height: 55px;
     width: 100%;
     color: #05386B;
+    background: rgba(0,0,0,.5);
 }
 
 h1 {
@@ -37,6 +38,32 @@ h1 {
     height: 30px;
     margin: 5px;
 }
+
+.menu {
+    display: flex;
+}
+
+.dropdownMenu {
+    display: none;
+    position: relative;
+    z-index: 1000000;
+    background-color: white;
+    color: black;
+    width: 120px;
+    margin: 0 12px;
+    border: none;
+    font-weight: bold;
+}
+
+
+.backdrop {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    z-index: -1;
+}
+
 
         /* Categories */
 
@@ -47,8 +74,9 @@ h1 {
     width: 260px;
     height: 80%;
     word-break: break-all;
-    background-color: #222222;
-    color: white;
+    background-color: #EBECF0;
+    color: black;
+    border-radius: 15px;
 }
 
 .cat p {
@@ -58,10 +86,10 @@ h1 {
         /* Task box and tasks */
 
 .list {
-    margin-top: 20px;
-    height: 75%;
+    margin-top: 10px;
+    height: 82%;
     width: 260px;
-    background-color:#333333;
+    background:rgba(0,0,0,0.25);
     overflow-y: auto;
 }
 
@@ -90,33 +118,42 @@ button {
     margin: 5px;
     font-weight: bold;
     background-color:white;
-    color: black;
     border: none;
 }
 
-#addNewCatBtn {
-    position: absolute;
-    right: 5px;
-    width: 100px;
+.addNewCatBtn, .backgroundBtn {
+    width: 120px;
     height: 30px;
-    margin: 5px;
+    margin: 12px 12px 0 12px;
     border: none;
     font-weight: bold;
     font-size: 1rem;
 }
 
 .newCatPop button {
-    background-color: #222222;
-    color: white;
+    background:rgba(0,0,0,0.25);
     width: 100px;
     height: 35px;
     border: none;
+}
+
+.backgroundSubmitBtn, .confirmTaskBtn {
+    background:rgba(0,0,0,0.25);
+    width: 110px;
+    height: 25px;
+    border: none;
+    margin: 10px 5px;
+    border-radius: 5px;
 }
 
 .catBtns {
     height: 41px;
     display: flex;
     justify-content: space-between;
+}
+
+.catBtns button {
+    background:rgba(0,0,0,0.25);
 }
 
 .removeCatBtn {
@@ -146,7 +183,7 @@ button {
 .newCatPop {
     display: block;
     position: absolute;
-    height: 200px;
+    height: 130px;
     width: 400px;
     padding: 20px;
     top: 200px;
@@ -156,8 +193,9 @@ button {
     margin-right: auto;
     z-index: 1000;
     border-radius: 15px;
-    background-color: white;
+    background-color: #EBECF0;
     color: black;
+    text-align: center;
     font-weight: bold;
 }
 

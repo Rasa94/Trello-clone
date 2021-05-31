@@ -1,16 +1,15 @@
 export class Category {
-    constructor(n, d) {
+    constructor(n) {
         this.name = n;
-        this.description = d;
     }
 
     render() {
         let board = document.querySelector('.board');
         let div =   `<div class="cat" draggable="true">
                         <p>Name: ${this.name}</p>
-                        <p>Description: ${this.description}</p>
+                        <p>Tasks:</p>
                         <div class="list">
-                            <p>Tasks:</p>
+                            
                         </div>
                         <div class="catBtns">
                             <button class="taskBtn" >Add task</button>

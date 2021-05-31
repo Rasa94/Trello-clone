@@ -3,13 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Trello clone</title>
 </head>
 <body>
     <nav>
+        <!-- <div class="backdrop"></div> -->
         <h1>Trello clone</h1>
-        <button id="addNewCatBtn">New</button>
+        <div class="menu">
+            <div class="backgroundOptions">
+                <button class="backgroundBtn">Backgrounds</button>
+                <form class="dropdownMenu">
+                    <div>
+                        <label>Jungle</label>
+                        <input type="radio" name="background" class="backgroundInput" value="jungle">
+                    </div>
+                    <div>
+                        <label>Leaves</label>
+                        <input type="radio" name="background" class="backgroundInput" value="leaves">
+                    </div>
+                    <div>
+                        <label>Mountain</label>
+                        <input type="radio" name="background" class="backgroundInput" value="mountain">
+                    </div>
+                    <div>
+                        <label>Iceland</label>
+                        <input type="radio" name="background" class="backgroundInput" value="iceland">
+                    </div>
+                    <div>
+                        <label>Black sand</label>
+                        <input type="radio" name="background" class="backgroundInput" value="blackSand">
+                    </div>
+                    <div>
+                        <label>Waterfall</label>
+                        <input type="radio" name="background" class="backgroundInput" value="waterfall">
+                    </div>
+                    <input type="submit" value="Pick" class="backgroundSubmitBtn">
+                </form>
+            </div>
+            <button class="addNewCatBtn">New</button>
+        </div>
     </nav>
 
     <div class="board">
@@ -21,10 +55,7 @@
             <label>Name:</label>
             <input type="text" id="nameInput" autocomplete="off">
             <br>
-            <label>Description:</label>
-            <input type="text" id="descInput" autocomplete="off">
-            <br>
-            <button id="confirmCatBtn">Add</button>
+            <button class="confirmCatBtn">Add</button>
         </form>
     </div>
 
@@ -33,7 +64,7 @@
             <label>Task:</label>
             <br>
             <input type="text" class="taskInput" autocomplete="off">
-            <button id="confirmTaskBtn">Add</button>
+            <button class="confirmTaskBtn">Add</button>
         </form>
     </div>
 
